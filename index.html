@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Кризисный архитектор — выход из кризиса для бизнеса</title>
-<meta name="description" content="Диагностика бизнеса, стратегия выхода из кризиса, автоматизация и внедрение. Консультация + сопровождение.">
+<title>Андрей Чупров — кризис-архитектор, трекер проектов, разработка</title>
+<meta name="description" content="Кризис-архитектор, ведущий трекер проектов. Разработка сайтов, ботов, кода, анализ рынка. Опишите ситуацию — свяжусь с решением.">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
@@ -23,7 +23,7 @@
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
-  .container { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+  .container { max-width: 820px; margin: 0 auto; padding: 40px 24px; }
 
 
   /* HERO */
@@ -38,7 +38,7 @@
     margin-bottom: 24px;
   }
   h1 {
-    font-size: 42px;
+    font-size: 40px;
     line-height: 1.15;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -46,9 +46,9 @@
   }
   h1 .accent { color: var(--accent); }
   .lead {
-    font-size: 19px;
+    font-size: 18px;
     color: var(--muted);
-    max-width: 620px;
+    max-width: 640px;
     margin-bottom: 32px;
   }
   .cta {
@@ -80,23 +80,42 @@
   }
 
 
-  /* PAIN LIST */
-  .pain {
+  /* SERVICES GRID */
+  .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .service {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 14px;
-    padding: 24px 28px;
-    margin-bottom: 16px;
+    padding: 24px 26px;
+    transition: border-color 0.15s;
   }
-  .pain p { color: var(--muted); margin: 0; }
-  .pain p + p { margin-top: 10px; }
+  .service:hover { border-color: var(--accent); }
+  .service-icon {
+    font-size: 24px;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .service h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .service p {
+    color: var(--muted);
+    font-size: 14.5px;
+    margin: 0;
+  }
 
 
   /* STEPS */
   .step {
     display: flex;
     gap: 18px;
-    padding: 18px 0;
+    padding: 20px 0;
     border-bottom: 1px solid var(--border);
   }
   .step:last-child { border-bottom: none; }
@@ -117,49 +136,37 @@
   .step-body p { color: var(--muted); font-size: 15px; margin: 0; }
 
 
-  /* RESULT */
-  .result {
-    background: linear-gradient(135deg, rgba(78,161,255,0.08), rgba(34,211,166,0.08));
+  /* HINT LIST */
+  .hint-list {
+    background: var(--card);
     border: 1px solid var(--border);
     border-radius: 14px;
-    padding: 28px;
+    padding: 24px 28px;
   }
-  .result ul { list-style: none; }
-  .result li {
-    padding: 10px 0;
-    padding-left: 28px;
+  .hint-list p {
+    color: var(--muted);
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
+  .hint-list ul { list-style: none; }
+  .hint-list li {
+    padding: 8px 0;
+    padding-left: 26px;
     position: relative;
     color: var(--text);
+    font-size: 15px;
   }
-  .result li::before {
-    content: "✓";
+  .hint-list li::before {
+    content: "→";
     position: absolute;
     left: 0;
-    color: var(--accent-2);
+    color: var(--accent);
     font-weight: 700;
   }
 
 
-  /* CASES */
-  .case {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 22px 26px;
-    margin-bottom: 14px;
-  }
-  .case-tag {
-    font-size: 12px;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 8px;
-  }
-  .case p { color: var(--muted); margin: 0; font-size: 15px; }
-
-
-  /* CTA BLOCK */
-  .cta-block {
+  /* CONTACT */
+  .contact-block {
     text-align: center;
     padding: 48px 24px;
     background: var(--card);
@@ -167,24 +174,32 @@
     border-radius: 18px;
     margin: 40px 0;
   }
-  .cta-block h2 { margin-bottom: 12px; }
-  .cta-block p { color: var(--muted); margin-bottom: 26px; }
+  .contact-block h2 { margin-bottom: 12px; }
+  .contact-block p.subtitle { color: var(--muted); margin-bottom: 26px; }
 
 
-  /* CONTACTS */
-  .contacts { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
-  .contact {
-    display: inline-block;
-    padding: 12px 22px;
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--text);
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: 15px;
-    transition: border-color 0.15s;
+  .contact-line {
+    color: #8a93a6;
+    font-size: 13px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
   }
-  .contact:hover { border-color: var(--accent); }
+  .contact-values {
+    color: var(--text);
+    font-size: 17px;
+    line-height: 2;
+    font-variant-numeric: tabular-nums;
+  }
+  .contact-values .ico {
+    color: var(--accent);
+    margin-right: 8px;
+  }
+  .contact-note {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 16px;
+  }
 
 
   /* FOOTER */
@@ -198,10 +213,11 @@
 
 
   @media (max-width: 600px) {
-    h1 { font-size: 30px; }
-    .lead { font-size: 17px; }
+    h1 { font-size: 28px; }
+    .lead { font-size: 16px; }
     .container { padding: 24px 20px; }
     .hero { padding: 30px 0 20px; }
+    h2 { font-size: 22px; }
   }
 </style>
 </head>
@@ -211,39 +227,80 @@
 
   <!-- HERO -->
   <div class="hero">
-    <div class="badge">Кризисный архитектор · Консалтинг · Автоматизация</div>
-    <h1>Вывожу бизнес из <span class="accent">кризиса</span> — от диагностики до результата</h1>
+    <div class="badge">Кризис-архитектор · Трекер проектов · Разработка</div>
+    <h1>Помогаю бизнесу выходить из <span class="accent">кризиса</span> и строить digital-решения</h1>
     <p class="lead">
-      Компания буксует, убытки растут, команда не понимает, куда двигаться?
-      Провожу диагностику, нахожу узкие места, предлагаю стратегию и помогаю внедрить.
+      Веду проекты под ключ: от диагностики ситуации до внедрения —
+      стратегия, автоматизация, разработка сайтов и ботов, анализ рынка.
+      Работаю с производством, услугами, стартапами.
     </p>
-    <a href="#contact" class="cta">Записаться на бесплатную диагностику →</a>
+    <a href="#contact" class="cta">Описать свою ситуацию →</a>
   </div>
 
 
-  <!-- PAIN -->
+  <!-- SERVICES -->
   <section>
-    <h2><span class="num">01</span>С чем ко мне приходят</h2>
-    <div class="pain">
-      <p>Продажи падают, расходы растут, а причины непонятны.</p>
-      <p>Команда работает, но результата нет — все «заняты», но не тем.</p>
-      <p>Есть идея роста, но непонятно, с чего начать и где взять ресурсы.</p>
-      <p>Автоматизация не приживается — внедрили, но никто не пользуется.</p>
-      <p>Нужна независимая оценка со стороны — без «своих» интересов.</p>
+    <h2><span class="num">01</span>Чем я могу быть полезен</h2>
+    <div class="services">
+
+
+      <div class="service">
+        <span class="service-icon">🧭</span>
+        <h3>Кризис-архитектор</h3>
+        <p>
+          Диагностика компании: где теряются деньги, время и клиенты.
+          Стратегия выхода из кризиса — с приоритетами и планом действий.
+        </p>
+      </div>
+
+
+      <div class="service">
+        <span class="service-icon">📊</span>
+        <h3>Ведущий трекер проектов</h3>
+        <p>
+          Веду проект от идеи до результата: план, задачи, контроль сроков,
+          работа с командой, отчётность перед заказчиком.
+        </p>
+      </div>
+
+
+      <div class="service">
+        <span class="service-icon">⚙️</span>
+        <h3>Разработка под задачу</h3>
+        <p>
+          Сайты, Telegram-боты, скрипты, автоматизация процессов.
+          Пишу код и компилирую прямо в своей системе — быстро, без лишних зависимостей.
+        </p>
+      </div>
+
+
+      <div class="service">
+        <span class="service-icon">📈</span>
+        <h3>Анализ рынка</h3>
+        <p>
+          Оценка ниши, конкурентов, спроса. Данные для решений —
+          куда идти, что запускать, чего не делать.
+        </p>
+      </div>
+
+
     </div>
   </section>
 
 
-  <!-- HOW -->
+  <!-- HOW TO START -->
   <section>
-    <h2><span class="num">02</span>Как я работаю</h2>
+    <h2><span class="num">02</span>Как начать работу</h2>
 
 
     <div class="step">
       <div class="step-num">1</div>
       <div class="step-body">
-        <h3>Бесплатная диагностика — 30 минут</h3>
-        <p>Разбираем ситуацию, выявляем ключевые боли, оцениваем, где можно быстро получить результат.</p>
+        <h3>Опишите ситуацию</h3>
+        <p>
+          В свободной форме: чем занимаетесь, какие системы используете,
+          с чем возникли сложности, что хочется получить. На почту или в Telegram.
+        </p>
       </div>
     </div>
 
@@ -251,8 +308,11 @@
     <div class="step">
       <div class="step-num">2</div>
       <div class="step-body">
-        <h3>Аудит и стратегия</h3>
-        <p>Глубокий разбор: финансы, процессы, команда, продукт. На выходе — документ с приоритетами и планом действий.</p>
+        <h3>Свяжусь с вами</h3>
+        <p>
+          Разберу описание, задам уточняющие вопросы, предложу формат работы
+          и озвучу стоимость. Без давления и обязательств.
+        </p>
       </div>
     </div>
 
@@ -260,71 +320,57 @@
     <div class="step">
       <div class="step-num">3</div>
       <div class="step-body">
-        <h3>Внедрение</h3>
-        <p>Помогаю реализовать план: настройка процессов, автоматизация, инструменты, контроль результата.</p>
-      </div>
-    </div>
-
-
-    <div class="step">
-      <div class="step-num">4</div>
-      <div class="step-body">
-        <h3>Сопровождение</h3>
-        <p>Остаюсь рядом на этапе изменений — чтобы стратегия не осталась «на бумаге».</p>
+        <h3>Начинаем работу</h3>
+        <p>
+          Если формат подходит — стартуем. Первый результат обычно
+          виден в течение 5–10 дней.
+        </p>
       </div>
     </div>
   </section>
 
 
-  <!-- RESULT -->
+  <!-- WHAT TO DESCRIBE -->
   <section>
-    <h2><span class="num">03</span>Что вы получаете</h2>
-    <div class="result">
+    <h2><span class="num">03</span>Что важно указать в описании</h2>
+    <div class="hint-list">
+      <p>Чтобы я сразу понял суть и не тратил ваше время на лишние вопросы:</p>
       <ul>
-        <li>Ясную картину: где вы теряете деньги и время</li>
-        <li>Стратегию выхода из кризиса — с приоритетами и сроками</li>
-        <li>Понимание, какие процессы автоматизировать в первую очередь</li>
-        <li>Инструменты для контроля результата — без лишней бюрократии</li>
-        <li>Независимый взгляд со стороны — без корпоративных «игр»</li>
+        <li>Чем занимается компания или проект</li>
+        <li>Какие системы и инструменты уже используются</li>
+        <li>С какими конкретными проблемами столкнулись</li>
+        <li>Какой результат хотели бы получить</li>
+        <li>Желаемые сроки (если есть)</li>
+        <li>Удобный способ связи — почта, Telegram, MAX</li>
       </ul>
     </div>
   </section>
 
 
-  <!-- CASES -->
-  <section>
-    <h2><span class="num">04</span>Примеры задач</h2>
-    <div class="case">
-      <div class="case-tag">Производство</div>
-      <p>Диагностика сбытовых процессов. Нашли 3 узких места, из-за которых терялось до 20% заказов. Внедрили простую систему учёта заявок.</p>
-    </div>
-    <div class="case">
-      <div class="case-tag">Услуги / малый бизнес</div>
-      <p>Автоматизация обработки заявок через Telegram-бота. Освободили 2 часа в день у собственника, снизили количество потерянных клиентов.</p>
-    </div>
-    <div class="case">
-      <div class="case-tag">Стартап</div>
-      <p>Помощь в упаковке идеи и подготовке к переговорам с инвесторами. Сформировали структуру презентации, выявили слабые места модели.</p>
-    </div>
-  </section>
+  <!-- CONTACT -->
+  <div class="contact-block" id="contact">
+    <h2>Опишите вашу ситуацию</h2>
+    <p class="subtitle">
+      Напишите в свободной форме — я свяжусь, разберёмся, предложу решение.
+    </p>
 
 
-  <!-- CTA -->
-  <div style="text-align: center; margin-top: 20px; line-height: 2;">
-  <div style="color: #8a93a6; font-size: 14px; margin-bottom: 8px;">Свяжитесь со мной:</div>
-  <div style="color: #e8eaf0; font-size: 16px;">
-    📱 +7 (912) 966-42-22<br>
-    ✉️ chuprov-andrejj@mail.ru
+    <div class="contact-line">Свяжитесь со мной</div>
+    <div class="contact-values">
+      <span class="ico">📱</span> +7 (912) 966-42-22<br>
+      <span class="ico">✉️</span> chuprov-andrejj@mail.ru
+    </div>
+    <div class="contact-note">
+      Telegram: @FredCom1
+    </div>
   </div>
-  <div style="color: #8a93a6; font-size: 13px; margin-top: 12px;">
-    Telegram: @FredCom1
-  </div>
+
+
 </div>
 
 
-
 <footer>
-  © Кризисный архитектор · 2026
+  © Андрей Чупров · Кризис-архитектор · 2026
 </footer>
 </body>
 </html>
