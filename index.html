@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кризисный архитектор — выход из кризиса для бизнеса</title>
+<meta name="description" content="Диагностика бизнеса, стратегия выхода из кризиса, автоматизация и внедрение. Консультация + сопровождение.">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0f1115;
+    --card: #171a21;
+    --border: #232833;
+    --text: #e8eaf0;
+    --muted: #8a93a6;
+    --accent: #4ea1ff;
+    --accent-2: #22d3a6;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 24px; }
+
+
+  /* HERO */
+  .hero { padding: 60px 0 40px; }
+  .badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  h1 {
+    font-size: 42px;
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  h1 .accent { color: var(--accent); }
+  .lead {
+    font-size: 19px;
+    color: var(--muted);
+    max-width: 620px;
+    margin-bottom: 32px;
+  }
+  .cta {
+    display: inline-block;
+    padding: 14px 28px;
+    background: var(--accent);
+    color: #0a0d12;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: transform 0.15s, opacity 0.15s;
+  }
+  .cta:hover { transform: translateY(-1px); opacity: 0.92; }
+
+
+  /* SECTIONS */
+  section { padding: 48px 0; border-top: 1px solid var(--border); }
+  h2 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+  }
+  h2 .num {
+    color: var(--accent-2);
+    font-variant-numeric: tabular-nums;
+    margin-right: 10px;
+  }
+
+
+  /* PAIN LIST */
+  .pain {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+  }
+  .pain p { color: var(--muted); margin: 0; }
+  .pain p + p { margin-top: 10px; }
+
+
+  /* STEPS */
+  .step {
+    display: flex;
+    gap: 18px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #0a0d12;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+  }
+  .step-body h3 { font-size: 17px; margin-bottom: 4px; font-weight: 600; }
+  .step-body p { color: var(--muted); font-size: 15px; margin: 0; }
+
+
+  /* RESULT */
+  .result {
+    background: linear-gradient(135deg, rgba(78,161,255,0.08), rgba(34,211,166,0.08));
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+  }
+  .result ul { list-style: none; }
+  .result li {
+    padding: 10px 0;
+    padding-left: 28px;
+    position: relative;
+    color: var(--text);
+  }
+  .result li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent-2);
+    font-weight: 700;
+  }
+
+
+  /* CASES */
+  .case {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin-bottom: 14px;
+  }
+  .case-tag {
+    font-size: 12px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+  .case p { color: var(--muted); margin: 0; font-size: 15px; }
+
+
+  /* CTA BLOCK */
+  .cta-block {
+    text-align: center;
+    padding: 48px 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    margin: 40px 0;
+  }
+  .cta-block h2 { margin-bottom: 12px; }
+  .cta-block p { color: var(--muted); margin-bottom: 26px; }
+
+
+  /* CONTACTS */
+  .contacts { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .contact {
+    display: inline-block;
+    padding: 12px 22px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: border-color 0.15s;
+  }
+  .contact:hover { border-color: var(--accent); }
+
+
+  /* FOOTER */
+  footer {
+    padding: 40px 24px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+  }
+
+
+  @media (max-width: 600px) {
+    h1 { font-size: 30px; }
+    .lead { font-size: 17px; }
+    .container { padding: 24px 20px; }
+    .hero { padding: 30px 0 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="badge">Кризисный архитектор · Консалтинг · Автоматизация</div>
+    <h1>Вывожу бизнес из <span class="accent">кризиса</span> — от диагностики до результата</h1>
+    <p class="lead">
+      Компания буксует, убытки растут, команда не понимает, куда двигаться?
+      Провожу диагностику, нахожу узкие места, предлагаю стратегию и помогаю внедрить.
+    </p>
+    <a href="#contact" class="cta">Записаться на бесплатную диагностику →</a>
+  </div>
+
+
+  <!-- PAIN -->
+  <section>
+    <h2><span class="num">01</span>С чем ко мне приходят</h2>
+    <div class="pain">
+      <p>Продажи падают, расходы растут, а причины непонятны.</p>
+      <p>Команда работает, но результата нет — все «заняты», но не тем.</p>
+      <p>Есть идея роста, но непонятно, с чего начать и где взять ресурсы.</p>
+      <p>Автоматизация не приживается — внедрили, но никто не пользуется.</p>
+      <p>Нужна независимая оценка со стороны — без «своих» интересов.</p>
+    </div>
+  </section>
+
+
+  <!-- HOW -->
+  <section>
+    <h2><span class="num">02</span>Как я работаю</h2>
+
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h3>Бесплатная диагностика — 30 минут</h3>
+        <p>Разбираем ситуацию, выявляем ключевые боли, оцениваем, где можно быстро получить результат.</p>
+      </div>
+    </div>
+
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h3>Аудит и стратегия</h3>
+        <p>Глубокий разбор: финансы, процессы, команда, продукт. На выходе — документ с приоритетами и планом действий.</p>
+      </div>
+    </div>
+
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h3>Внедрение</h3>
+        <p>Помогаю реализовать план: настройка процессов, автоматизация, инструменты, контроль результата.</p>
+      </div>
+    </div>
+
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h3>Сопровождение</h3>
+        <p>Остаюсь рядом на этапе изменений — чтобы стратегия не осталась «на бумаге».</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- RESULT -->
+  <section>
+    <h2><span class="num">03</span>Что вы получаете</h2>
+    <div class="result">
+      <ul>
+        <li>Ясную картину: где вы теряете деньги и время</li>
+        <li>Стратегию выхода из кризиса — с приоритетами и сроками</li>
+        <li>Понимание, какие процессы автоматизировать в первую очередь</li>
+        <li>Инструменты для контроля результата — без лишней бюрократии</li>
+        <li>Независимый взгляд со стороны — без корпоративных «игр»</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- CASES -->
+  <section>
+    <h2><span class="num">04</span>Примеры задач</h2>
+    <div class="case">
+      <div class="case-tag">Производство</div>
+      <p>Диагностика сбытовых процессов. Нашли 3 узких места, из-за которых терялось до 20% заказов. Внедрили простую систему учёта заявок.</p>
+    </div>
+    <div class="case">
+      <div class="case-tag">Услуги / малый бизнес</div>
+      <p>Автоматизация обработки заявок через Telegram-бота. Освободили 2 часа в день у собственника, снизили количество потерянных клиентов.</p>
+    </div>
+    <div class="case">
+      <div class="case-tag">Стартап</div>
+      <p>Помощь в упаковке идеи и подготовке к переговорам с инвесторами. Сформировали структуру презентации, выявили слабые места модели.</p>
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <div class="cta-block" id="contact">
+    <h2>Начнём с бесплатной диагностики</h2>
+    <p>30 минут разговора. Без обязательств. Честно скажу, смогу ли помочь в вашем случае.</p>
+    <div class="contacts">
+      <a href="https://t.me/FredCom1" class="contact">Telegram</a>
+      <a href="mailto:chuprov-andrejj@mail.ru" class="contact">Email</a>
+    </div>
+  </div>
+
+
+</div>
+
+
+<footer>
+  © Кризисный архитектор · 2026
+</footer>
+</body>
+</html>
